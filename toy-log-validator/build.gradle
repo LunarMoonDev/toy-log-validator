@@ -1,0 +1,115 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.3.1'
+	id 'io.spring.dependency-management' version '1.1.5'
+    id "io.freefair.lombok" version "8.6"
+	id "jacoco"
+}
+
+group = 'com.project'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+springBoot {
+  mainClass = 'com.project.toy_log_validator.ToyLogValidatorApplication'
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-batch'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.springframework.kafka:spring-kafka'
+    implementation 'org.apache.poi:poi:5.3.0'
+    implementation 'com.opencsv:opencsv:5.9'
+
+    implementation 'com.google.api-client:google-api-client:2.3.0'
+	implementation 'com.google.apis:google-api-services-drive:v3-rev20240123-2.0.0'
+    implementation 'com.google.auth:google-auth-library-oauth2-http:1.24.0'
+
+    runtimeOnly 'com.mysql:mysql-connector-j'
+
+	compileOnly 'org.projectlombok:lombok'
+
+	annotationProcessor 'org.projectlombok:lombok'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.batch:spring-batch-test'
+	testImplementation 'org.springframework.kafka:spring-kafka-test'
+    
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+test {
+    finalizedBy jacocoTestReport
+
+    testLogging {
+       events "failed", "passed", "skipped", "standardError","standardOut", "started"
+    }
+}
+
+jacocoTestReport {
+	dependsOn test
+
+	reports {
+        xml {
+            enabled true
+        }
+
+        html {
+            enabled true
+        }
+    }
+
+    afterEvaluate {
+        classDirectories = files(classDirectories.files.collect {
+            fileTree(dir: it,
+                    exclude: ['**/config/**', 
+					'**/dto/**', 
+					'**/entity/**', 
+					'**/exceptions/**',
+                    '**/enums/**',
+                    '**/ToyLogValidatorApplication*'])
+        })
+    }
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.5
+            }
+        }
+
+        rule {
+            enabled = false
+            element = 'CLASS'
+            includes = ['com.project.toy_log_validator.*']
+
+            limit {
+                counter = 'LINE'
+                value = 'TOTALCOUNT'
+                maximum = 0.3
+            }
+        }
+    }
+}
