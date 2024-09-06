@@ -33,21 +33,12 @@ public class ValidateDataTasklet implements Tasklet {
     @Value("#{jobParameters['reportId']}")
     private String fileId;
 
-    @Value("#{jobParameters['colSize']}")
-    private double colSize;
-
-    @Value("#{jobParameters['rowSize']}")
-    private double rowSize;
-
     @Override
     public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) throws Exception {
         log.info("X-Tracker: {} | task one: data validation", uuid);
-        log.debug("X-Tracker: {} | given reports parameter: {}", uuid, fileId);
-
-        double reportSize[] = {colSize, rowSize};
 
         CSVReader csvReport = reportService.getReportCsv(fileId, uuid);
-        Validation response = validatorService.dataValidation(reportSize, csvReport, uuid);
+        Validation response = validatorService.dataValidation(csvReport, uuid);
 
         if(response.equals(Validation.PASS)) {
             return RepeatStatus.FINISHED;

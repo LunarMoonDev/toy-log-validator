@@ -42,7 +42,6 @@ public class ValidateSchemaTasklet implements Tasklet {
     @Override
     public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) throws Exception {
         log.info("X-Tracker: {} | task one: schema validation", uuid);
-        log.debug("X-Tracker: {} | given reports parameter: {}", uuid, fileId);
 
         double reportSize[] = {colSize, rowSize};
 
