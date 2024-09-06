@@ -1,8 +1,15 @@
 package com.project.toy_log_validator.service.impl;
 
+import java.io.IOException;
+import java.util.Arrays;
+
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.math.NumberUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.opencsv.CSVReader;
+import com.opencsv.exceptions.CsvValidationException;
 import com.project.toy_log_validator.enums.Error;
 import com.project.toy_log_validator.enums.Validation;
 import com.project.toy_log_validator.exceptions.GenericException;
@@ -14,45 +21,45 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 public class DataValidatorServiceImpl implements DataValidatorService {
 
+    @Value("${logs.validator.regex.percentage}")
+    private String percentageRegex;
+
     @Override
-    public Validation dataValidation(double []reportSize, CSVReader reportSheet, String uuid) throws GenericException {
+    public Validation dataValidation(CSVReader reportSheet, String uuid) throws GenericException, CsvValidationException, IOException {
         log.info("X-Tracker: {} | validating data", uuid);
         log.debug("X-Tracker: {} | request id: {}", reportSheet);
 
-        // int reportSize[] = WorkbookUtil.getDimensions(reportSheet);
-        // int rowMaxIdx = reportSize[0];
-        // int collMaxIdx = reportSize[1];
+        String[] nextLine = reportSheet.readNext(); // grab header
+        String[] reportHeaders = Arrays.copyOf(nextLine, nextLine.length);
 
-        // Row headerRow = reportSheet.getSheetAt(0).getRow(1);
+        nextLine = reportSheet.readNext(); // skipping to row 1, no need to process headers
+        while (nextLine != null) {
+            for(int i = 0; i < nextLine.length; i++) {
+                String cellValue =  nextLine[i].trim();
+                String header = reportHeaders[i].trim();
 
+                if(cellValue == null || StringUtils.isBlank(cellValue) || StringUtils.isEmpty(cellValue)) {
+                    throw new GenericException(Error.DATA_EMP_ERROR);
+                } else if (header.equals("DIRECT_HIT") || header.equals("CRIT_HIT")) {
+                    if(!cellValue.matches(percentageRegex)) {
+                        throw new GenericException(Error.DATA_PRC_ERROR);
+                    }
 
-        // for (int rollIdx = 1; rollIdx < rowMaxIdx; rollIdx++) {
-        //     Row row = reportSheet.getSheetAt(0).getRow(1);
+                    cellValue = cellValue.substring(0, cellValue.length() - 1);
+                    if(!NumberUtils.isParsable(cellValue)) {
+                        throw new GenericException(Error.DATA_DMG_ERROR);
+                    } else if (Double.parseDouble(cellValue) / 100 > 1) {
+                        throw new GenericException(Error.DATA_PRC_ERROR);
+                    }
+                } else if (header.equals("DAMAGE")) {
+                    if(!NumberUtils.isParsable(cellValue)) {
+                        throw new GenericException(Error.DATA_DMG_ERROR);
+                    }
+                }
+            }
 
-        //     for (int collIdx = 0; collIdx < collMaxIdx; collIdx++) {
-        //         Cell cell = row.getCell(collIdx);
-        //         Cell headerCell = headerRow.getCell(collIdx);
-
-        //         if(cell == null || cell.getCellType().equals(BLANK)) {
-        //             throw new GenericException(Error.DATA_EMP_ERROR);
-        //         }
-
-        //         if (headerCell.getStringCellValue().equals("DIRECT_HIT") ||
-        //                 headerCell.getStringCellValue().equals("CRIT_HIT")) {
-        //             if (!(cell.getCellType().equals(NUMERIC) && cell.getNumericCellValue() / 100 <= 1)) {
-        //                 throw new GenericException(Error.DATA_PRC_ERROR);
-        //             }
-        //         } else if (headerCell.getStringCellValue().equals("DAMAGE")) {
-        //             if(!(cell.getCellType().equals(NUMERIC) && cell.getNumericCellValue() % 10 > 1)) {
-        //                 throw new GenericException(Error.DATA_DMG_ERROR);
-        //             }
-        //         } else if (cell.getCellType() != STRING) {
-        //             throw new GenericException(Error.DATA_VAL_ERROR);
-        //         }
-        //     }
-        // }
-
-        
+            nextLine = reportSheet.readNext();
+        }
 
         return Validation.PASS;
     }
