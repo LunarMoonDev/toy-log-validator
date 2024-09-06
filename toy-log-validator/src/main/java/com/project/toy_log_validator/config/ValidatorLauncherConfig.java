@@ -31,18 +31,20 @@ public class ValidatorLauncherConfig {
     @Autowired
     private Job job;
 
-    @Scheduled(cron = "0 0/5 * * * ?")
+    @Scheduled(cron = "* 0/5 * * * ?")
     public void runBatchJob() {
         try {
             String uuid = Uuid.randomUuid().toString();
-            Reports reports = reportService.getLatestReport(uuid);
-            BigInteger playerId = reports.getPlayerId();
-            String reportId = reports.getReportId();
+            log.info("X-Tracker: {} | launching validation job", uuid);
 
-            CSVReader report = reportService.getReportCsv(reports.getReportId(), uuid);
-            int[] sizes = WorkbookUtil.getDimensions(report);
+            Reports reports = reportService.getLatestReport(uuid);
 
             if (!reports.getIsProcessed()) {
+                BigInteger playerId = reports.getPlayerId();
+                String reportId = reports.getReportId();
+                CSVReader report = reportService.getReportCsv(reports.getReportId(), uuid);
+                int[] sizes = WorkbookUtil.getDimensions(report);
+
                 JobParameters parameter = new JobParametersBuilder()
                         .addString("uuid", uuid)
                         .addString("reportId", reportId)
