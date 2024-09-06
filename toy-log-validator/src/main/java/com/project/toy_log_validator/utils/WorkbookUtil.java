@@ -9,10 +9,12 @@ public class WorkbookUtil {
     public static int[] getDimensions(CSVReader reportSheet) throws CsvValidationException, IOException {
         int rowIdx = 1;
         int colIdx = reportSheet.readNext().length;
-        String[] nextLine;
-
-        while((nextLine = reportSheet.readNext()) != null) {
+        
+        String[] nextLine = reportSheet.readNext();
+        while(nextLine != null) {
             rowIdx +=1;
+
+            nextLine = reportSheet.readNext();
         }
 
         int[] reportSize = new int[2];
