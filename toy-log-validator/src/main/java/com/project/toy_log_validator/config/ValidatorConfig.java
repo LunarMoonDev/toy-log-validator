@@ -13,6 +13,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
 
+import com.project.toy_log_validator.tasks.ParseReportTasklet;
 import com.project.toy_log_validator.tasks.ValidateDataTasklet;
 import com.project.toy_log_validator.tasks.ValidateSchemaTasklet;
 
@@ -22,44 +23,57 @@ import lombok.extern.slf4j.Slf4j;
 @Configuration
 @ComponentScan("com.project.toy_log_validator.tasks")
 public class ValidatorConfig {
-    @Autowired
-    private ValidateSchemaTasklet schemaTasklet;
+        @Autowired
+        private ValidateSchemaTasklet schemaTasklet;
 
-    @Autowired
-    private ValidateDataTasklet dataTasklet;
+        @Autowired
+        private ValidateDataTasklet dataTasklet;
 
-    @Autowired
+        @Autowired
+        private ParseReportTasklet reportTasklet;
 
-    @Bean("stepValidationSchema")
-    public Step validateSchema(@Autowired JobRepository repository,
-            @Autowired PlatformTransactionManager transactionManager) {
-        log.info("Creating step (validation schema)...");
+        @Bean("stepValidationSchema")
+        public Step validateSchema(@Autowired JobRepository repository,
+                        @Autowired PlatformTransactionManager transactionManager) {
+                log.info("Creating step (validation schema)...");
 
-        return new StepBuilder("stepValidationSchema", repository)
-                .tasklet(schemaTasklet, transactionManager)
-                .build();
-    }
+                return new StepBuilder("stepValidationSchema", repository)
+                                .tasklet(schemaTasklet, transactionManager)
+                                .build();
+        }
 
-    @Bean("stepValidationData")
-    public Step validateData(@Autowired JobRepository repository,
-            @Autowired PlatformTransactionManager transactionManager) {
-        log.info("Creating step (validation data)...");
+        @Bean("stepValidationData")
+        public Step validateData(@Autowired JobRepository repository,
+                        @Autowired PlatformTransactionManager transactionManager) {
+                log.info("Creating step (validation data)...");
 
-        return new StepBuilder("stepValidationData", repository)
-                .tasklet(dataTasklet, transactionManager)
-                .build();
-    }
+                return new StepBuilder("stepValidationData", repository)
+                                .tasklet(dataTasklet, transactionManager)
+                                .build();
+        }
 
-    @Bean("validation")
-    public Job validateJob(@Autowired JobRepository repository,
-            @Autowired @Qualifier("stepValidationSchema") Step validateSchemaStep,
-            @Autowired @Qualifier("stepValidationData") Step validateDataStep) {
-        log.info("Creating job (validation)...");
+        @Bean("stepProcessReport")
+        public Step processReport(@Autowired JobRepository repository,
+                        @Autowired PlatformTransactionManager transactionManager) {
+                log.info("Creating step (process report)...");
 
-        return new JobBuilder("validation", repository)
-                .incrementer(new RunIdIncrementer())
-                .start(validateSchemaStep)
-                .next(validateDataStep)
-                .build();
-    }
+                return new StepBuilder("stepProcessReport", repository)
+                                .tasklet(reportTasklet, transactionManager)
+                                .build();
+        }
+
+        @Bean("validation")
+        public Job validateJob(@Autowired JobRepository repository,
+                        @Autowired @Qualifier("stepValidationSchema") Step validateSchemaStep,
+                        @Autowired @Qualifier("stepValidationData") Step validateDataStep,
+                        @Autowired @Qualifier("stepProcessReport") Step processReportStep) {
+                log.info("Creating job (validation)...");
+
+                return new JobBuilder("validation", repository)
+                                .incrementer(new RunIdIncrementer())
+                                .start(validateSchemaStep)
+                                .next(validateDataStep)
+                                .next(processReportStep)
+                                .build();
+        }
 }
