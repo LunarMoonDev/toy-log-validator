@@ -1,6 +1,7 @@
 package com.project.toy_log_validator.service.impl;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 import org.springframework.stereotype.Service;
 
@@ -22,15 +23,16 @@ public class SchemaValidatorServiceImpl implements SchemaValidatorService {
         log.info("X-Tracker: {} | validating schema", uuid);
         log.debug("X-Tracker: {} | request id: {}", uuid, reportSheet);
 
-        String[] nextLine;
-        while((nextLine = reportSheet.readNext()) != null) {
+        String[] nextLine = reportSheet.readNext();
+        String[] currHeaders = Arrays.copyOf(nextLine, nextLine.length);
+
+        while(nextLine != null) {
             if(nextLine.length != headers.size()) {
                 throw new GenericException(Error.SCHEMA_COL_ERROR); 
             }
+            nextLine = reportSheet.readNext();
         }
 
-
-        String[] currHeaders = reportSheet.readNext();
         for(String currHeader: currHeaders) {
             
             String trimmedHeader = currHeader.trim();
