@@ -31,7 +31,7 @@ public class ValidatorLauncherConfig {
     @Autowired
     private Job job;
 
-    @Scheduled(cron = "*/10 * * * * ?")
+    @Scheduled(cron = "0 0/5 * * * ?")
     public void runBatchJob() {
         try {
             String uuid = Uuid.randomUuid().toString();
@@ -51,8 +51,6 @@ public class ValidatorLauncherConfig {
                         .addDouble("colSize", sizes[0] + 0.0)
                         .addDouble("rowSize", sizes[1] + 0.0)
                         .toJobParameters();
-
-                log.info("Job Parameters: {}", parameter);
 
                 jobLauncher.run(job, parameter);
             }
