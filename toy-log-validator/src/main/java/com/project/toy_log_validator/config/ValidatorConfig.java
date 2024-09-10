@@ -14,6 +14,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
 
 import com.project.toy_log_validator.tasks.ParseReportTasklet;
+import com.project.toy_log_validator.tasks.PushSuccessTasklet;
 import com.project.toy_log_validator.tasks.ValidateDataTasklet;
 import com.project.toy_log_validator.tasks.ValidateSchemaTasklet;
 
@@ -31,6 +32,9 @@ public class ValidatorConfig {
 
         @Autowired
         private ParseReportTasklet reportTasklet;
+
+        @Autowired
+        private PushSuccessTasklet pushSuccessTasklet;
 
         @Bean("stepValidationSchema")
         public Step validateSchema(@Autowired JobRepository repository,
@@ -62,11 +66,22 @@ public class ValidatorConfig {
                                 .build();
         }
 
+        @Bean("stepPublishSuccess")
+        public Step publishSuccess(@Autowired JobRepository repository,
+                        @Autowired PlatformTransactionManager transactionManager) {
+                log.info("Creating step (publish success)...");
+
+                return new StepBuilder("stepPublishSuccess", repository)
+                                .tasklet(pushSuccessTasklet, transactionManager)
+                                .build();
+        }
+
         @Bean("validation")
         public Job validateJob(@Autowired JobRepository repository,
                         @Autowired @Qualifier("stepValidationSchema") Step validateSchemaStep,
                         @Autowired @Qualifier("stepValidationData") Step validateDataStep,
-                        @Autowired @Qualifier("stepProcessReport") Step processReportStep) {
+                        @Autowired @Qualifier("stepProcessReport") Step processReportStep,
+                        @Autowired @Qualifier("stepPublishSuccess") Step publishSuccess) {
                 log.info("Creating job (validation)...");
 
                 return new JobBuilder("validation", repository)
@@ -74,6 +89,7 @@ public class ValidatorConfig {
                                 .start(validateSchemaStep)
                                 .next(validateDataStep)
                                 .next(processReportStep)
+                                .next(publishSuccess)
                                 .build();
         }
 }
