@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.opencsv.CSVReader;
 import com.project.toy_log_validator.entity.Reports;
+import com.project.toy_log_validator.enums.Validation;
 import com.project.toy_log_validator.exceptions.GenericException;
 import com.project.toy_log_validator.repository.ReportsRepository;
 import com.project.toy_log_validator.service.ParseReportService;
@@ -47,6 +48,23 @@ public class ReportServiceImpl implements ReportService {
 
         response.ifPresent((report) -> {
             report.setIsProcessed(true);
+            report.setIsError(false);
+            report.setEvent(Validation.PASS.getMessage());
+            report.setStatus(Validation.PASS.getCode());
+            repository.save(report);
+        });
+    }
+
+    @Override
+    public void saveEvent(String uuid, String reportId, String status, String event) {
+        log.info("X-Tracker: {} | updating report for error event", uuid);
+        Optional<Reports> response = repository.findByReportId(reportId);
+
+        response.ifPresent((report) -> {
+            report.setEvent(event);
+            report.setStatus(status);
+            report.setIsProcessed(true);
+            report.setIsError(true);
             repository.save(report);
         });
     }
