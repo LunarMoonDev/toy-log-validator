@@ -1,0 +1,83 @@
+ /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_4v3gjhcqdbi374npw4kjrhdai.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_17amohh3rgyt9iyameun5nvyw.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_85ef67zs68899ul0765n7xqd9.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_85ef67zs68899ul0765n7xqd9.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_8gfm63m1mowamgn86p8m2qyqn.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_8gfm63m1mowamgn86p8m2qyqn.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app ; /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_ap9ax5u5jlmbl98j3du2o07hw.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:32905 @/tmp/cp_8gfm63m1mowamgn86p8m2qyqn.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app ; /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:39731 @/tmp/cp_ap9ax5u5jlmbl98j3du2o07hw.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_8gfm63m1mowamgn86p8m2qyqn.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:45667 @/tmp/cp_8gfm63m1mowamgn86p8m2qyqn.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app ; /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:33815 @/tmp/cp_ap9ax5u5jlmbl98j3du2o07hw.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_8gfm63m1mowamgn86p8m2qyqn.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:40911 @/tmp/cp_8gfm63m1mowamgn86p8m2qyqn.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:46403 @/tmp/cp_8gfm63m1mowamgn86p8m2qyqn.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_8gfm63m1mowamgn86p8m2qyqn.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:39539 @/tmp/cp_8gfm63m1mowamgn86p8m2qyqn.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:35199 @/tmp/cp_8gfm63m1mowamgn86p8m2qyqn.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_e6xrhc8lmmtf4eyax7cxoi033.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:35625 @/tmp/cp_e6xrhc8lmmtf4eyax7cxoi033.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:44469 @/tmp/cp_e6xrhc8lmmtf4eyax7cxoi033.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:41533 @/tmp/cp_3mr671hh2uzh2qxm0jccyx15o.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:35925 @/tmp/cp_3mr671hh2uzh2qxm0jccyx15o.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:36147 @/tmp/cp_3mr671hh2uzh2qxm0jccyx15o.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:36553 @/tmp/cp_3mr671hh2uzh2qxm0jccyx15o.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:35931 @/tmp/cp_3mr671hh2uzh2qxm0jccyx15o.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_3mr671hh2uzh2qxm0jccyx15o.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:43379 @/tmp/cp_3mr671hh2uzh2qxm0jccyx15o.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_e6xrhc8lmmtf4eyax7cxoi033.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:34851 @/tmp/cp_e6xrhc8lmmtf4eyax7cxoi033.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_em9ecvcevfhossnu3j82dn1mc.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:44419 @/tmp/cp_em9ecvcevfhossnu3j82dn1mc.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_i44s5ee1n1g499ljvxp4oytv.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:41463 @/tmp/cp_i44s5ee1n1g499ljvxp4oytv.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_i44s5ee1n1g499ljvxp4oytv.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:37549 @/tmp/cp_i44s5ee1n1g499ljvxp4oytv.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:37465 @/tmp/cp_3xxfh4bawhenlczsm1qurni1f.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:42499 @/tmp/cp_7bzal7wvo97i1bqqvu5pjmwgp.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:39851 @/tmp/cp_7bzal7wvo97i1bqqvu5pjmwgp.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:45009 @/tmp/cp_7bzal7wvo97i1bqqvu5pjmwgp.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:33171 @/tmp/cp_7bzal7wvo97i1bqqvu5pjmwgp.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:42115 @/tmp/cp_7bzal7wvo97i1bqqvu5pjmwgp.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:41531 @/tmp/cp_7bzal7wvo97i1bqqvu5pjmwgp.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_7bzal7wvo97i1bqqvu5pjmwgp.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:34181 @/tmp/cp_7bzal7wvo97i1bqqvu5pjmwgp.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_7bzal7wvo97i1bqqvu5pjmwgp.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:42809 @/tmp/cp_7bzal7wvo97i1bqqvu5pjmwgp.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_7bzal7wvo97i1bqqvu5pjmwgp.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_60ueuoqel96kyoi5s6672mrqy.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_60ueuoqel96kyoi5s6672mrqy.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_5eduryx3qqzckicgj3tozlrzr.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:41347 @/tmp/cp_5eduryx3qqzckicgj3tozlrzr.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_5eduryx3qqzckicgj3tozlrzr.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:33501 @/tmp/cp_5eduryx3qqzckicgj3tozlrzr.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_5eduryx3qqzckicgj3tozlrzr.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:35369 @/tmp/cp_5eduryx3qqzckicgj3tozlrzr.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:36927 @/tmp/cp_5eduryx3qqzckicgj3tozlrzr.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_5eduryx3qqzckicgj3tozlrzr.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_6gigaqhj7g26o3ckybjhyqgvh.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_d6qp0voo8lx44c5q7gbp01bqb.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_d6qp0voo8lx44c5q7gbp01bqb.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:37907 @/tmp/cp_2kdl1kvohd7qd01ppfueni6ss.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:38733 @/tmp/cp_2kdl1kvohd7qd01ppfueni6ss.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:44567 @/tmp/cp_2kdl1kvohd7qd01ppfueni6ss.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_2kdl1kvohd7qd01ppfueni6ss.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:39917 @/tmp/cp_b4r2ug4j1sdwjfsjg3wrblpb8.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_b4r2ug4j1sdwjfsjg3wrblpb8.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:34473 @/tmp/cp_b4r2ug4j1sdwjfsjg3wrblpb8.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_eqad871ch5ku10wzfflafsnin.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_81u6trxo55odlynazk2dx79ex.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:39687 @/tmp/cp_81u6trxo55odlynazk2dx79ex.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:37483 @/tmp/cp_81u6trxo55odlynazk2dx79ex.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:45813 @/tmp/cp_81u6trxo55odlynazk2dx79ex.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_3zb50cg1v8kw5baz1cplizqf.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_3zb50cg1v8kw5baz1cplizqf.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_9csqqvcu06uog7lhz8hklps48.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app ; /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_eslf1tjc5kb0sxsz5y584cog8.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_9csqqvcu06uog7lhz8hklps48.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_a9druwzj4dsfcjwgf8pogx2aq.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_a9druwzj4dsfcjwgf8pogx2aq.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_a9druwzj4dsfcjwgf8pogx2aq.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_a9druwzj4dsfcjwgf8pogx2aq.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+ cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_cdk420vn15j968j9y5xw6vl9q.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
