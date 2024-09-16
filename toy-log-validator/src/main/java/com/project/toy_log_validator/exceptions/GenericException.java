@@ -7,11 +7,5 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public class GenericException extends RuntimeException{
-    private String code;
-    private String message;
-
-    public GenericException(Error error) {
-        this.code = error.getCode();
-        this.message = error.getMessage();
-    }
+    private Error error;
 }
