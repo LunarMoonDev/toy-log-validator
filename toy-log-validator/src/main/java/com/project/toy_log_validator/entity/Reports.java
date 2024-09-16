@@ -38,6 +38,12 @@ public class Reports {
     @Column(name = "is_processed")
     private Boolean isProcessed;
 
+    @Column(name = "is_error")
+    private Boolean isError;
+
+    @Column(name = "event")
+    private String event;
+
     @Column(name = "gmt_create")
     private LocalDateTime gmtCreate;
 
