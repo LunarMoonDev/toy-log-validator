@@ -1,6 +1,7 @@
 package com.project.toy_log_validator.config;
 
 import org.springframework.batch.core.Step;
+import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.job.builder.JobBuilder;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
@@ -8,11 +9,13 @@ import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.batch.core.step.builder.StepBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
 
+import com.project.toy_log_validator.exceptions.StepExceptionListener;
 import com.project.toy_log_validator.tasks.ParseReportTasklet;
 import com.project.toy_log_validator.tasks.PushSuccessTasklet;
 import com.project.toy_log_validator.tasks.ValidateDataTasklet;
@@ -23,6 +26,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Configuration
 @ComponentScan("com.project.toy_log_validator.tasks")
+@EnableBatchProcessing
 public class ValidatorConfig {
         @Autowired
         private ValidateSchemaTasklet schemaTasklet;
@@ -36,6 +40,12 @@ public class ValidatorConfig {
         @Autowired
         private PushSuccessTasklet pushSuccessTasklet;
 
+        @Autowired
+        private StepExceptionListener validationListener;
+
+        @Value("${validator.batch.job.retries}")
+        private int retryLimit;
+
         @Bean("stepValidationSchema")
         public Step validateSchema(@Autowired JobRepository repository,
                         @Autowired PlatformTransactionManager transactionManager) {
@@ -43,6 +53,7 @@ public class ValidatorConfig {
 
                 return new StepBuilder("stepValidationSchema", repository)
                                 .tasklet(schemaTasklet, transactionManager)
+                                .listener(validationListener)
                                 .build();
         }
 
@@ -53,6 +64,7 @@ public class ValidatorConfig {
 
                 return new StepBuilder("stepValidationData", repository)
                                 .tasklet(dataTasklet, transactionManager)
+                                .listener(validationListener)
                                 .build();
         }
 

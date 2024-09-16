@@ -17,6 +17,7 @@ import com.project.toy_log_validator.utils.WorkbookUtil;
 
 import lombok.extern.slf4j.Slf4j;
 import java.math.BigInteger;
+import java.util.Objects;
 
 @Slf4j
 @Configuration
@@ -31,7 +32,7 @@ public class ValidatorLauncherConfig {
     @Autowired
     private Job job;
 
-    @Scheduled(cron = "* 0/5 * * * ?")
+    @Scheduled(cron = "*/30 * * * * ?")
     public void runBatchJob() {
         try {
             String uuid = Uuid.randomUuid().toString();
@@ -39,7 +40,7 @@ public class ValidatorLauncherConfig {
 
             Reports reports = reportService.getLatestReport(uuid);
 
-            if (!reports.getIsProcessed()) {
+            if (!Objects.isNull(reports)) {
                 BigInteger playerId = reports.getPlayerId();
                 String reportId = reports.getReportId();
                 CSVReader report = reportService.getReportCsv(reports.getReportId(), uuid);
