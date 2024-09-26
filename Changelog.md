@@ -1,5 +1,19 @@
 # Changelog
 
+## Version v0.2.0 (2024-09-26)
+
+### Features
+
+- add unit test to services (c74d6fb9)
+
+### Refactoring
+
+- add setter and remove unnecessary var (f73d869e)
+
+### Chores and tidying
+
+- add commands to bash (c71aabd0)
+
 ## Version v0.1.0 (2024-09-16)
 
 ### Features
