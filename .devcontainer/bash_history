@@ -81,3 +81,11 @@
  /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_a9druwzj4dsfcjwgf8pogx2aq.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
  cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_a9druwzj4dsfcjwgf8pogx2aq.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
  cd /app/toy-log-validator ; /usr/bin/env /usr/java/openjdk-17/bin/java @/tmp/cp_cdk420vn15j968j9y5xw6vl9q.argfile com.project.toy_log_validator.ToyLogValidatorApplication 
+gradle cleanTest test
+cd toy-log-validator/
+gradle cleanTest test
+clear
+gradle cleanTest test
+clear
+cd toy-log-validator/
+gradle cleanTest test
