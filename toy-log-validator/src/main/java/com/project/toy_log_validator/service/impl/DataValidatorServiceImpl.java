@@ -15,6 +15,7 @@ import com.project.toy_log_validator.enums.Validation;
 import com.project.toy_log_validator.exceptions.GenericException;
 import com.project.toy_log_validator.service.DataValidatorService;
 
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -22,6 +23,7 @@ import lombok.extern.slf4j.Slf4j;
 public class DataValidatorServiceImpl implements DataValidatorService {
 
     @Value("${logs.validator.regex.percentage}")
+    @Setter
     private String percentageRegex;
 
     @Override
