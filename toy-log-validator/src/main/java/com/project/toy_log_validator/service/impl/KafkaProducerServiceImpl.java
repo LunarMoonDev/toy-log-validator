@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.project.toy_log_validator.dto.KafkaDTO;
 import com.project.toy_log_validator.service.KafkaProducerService;
 
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -18,6 +19,7 @@ public class KafkaProducerServiceImpl implements KafkaProducerService {
     private KafkaTemplate<String, KafkaDTO> kafkaTemplate;
 
     @Value("${kafka.log.validation.topic.name}")
+    @Setter
     private String topicName;
 
     @Override

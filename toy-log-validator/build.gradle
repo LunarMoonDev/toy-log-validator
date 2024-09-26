@@ -84,11 +84,16 @@ jacocoTestReport {
     afterEvaluate {
         classDirectories = files(classDirectories.files.collect {
             fileTree(dir: it,
-                    exclude: ['**/config/**', 
-					'**/dto/**', 
-					'**/entity/**', 
-					'**/exceptions/**',
+                    exclude: [
+                    '**/config/**',
+					'**/dto/**',
+					'**/entity/**',
                     '**/enums/**',
+					'**/exceptions/**',
+                    '**/repository/**',
+                    '**/serializers/**',
+                    '**/tasks/**',
+                    '**/utils/**',
                     '**/ToyLogValidatorApplication*'])
         })
     }
